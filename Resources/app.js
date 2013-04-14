@@ -12,14 +12,14 @@ var ViewScrollr = require("ViewScrollr"),
 	introView = Ti.UI.createView({
 		width  : Ti.UI.FILL,
 		height : Ti.UI.FILL,
-		backgroundColor : "#fff"
+		backgroundColor : "#eee"
 	}),
 	appNameLbl = Ti.UI.createLabel({
 		text  : "ViewScrollr Demo",
 		width : Ti.UI.FILL,
 		top   : 10,
 		color : "#000",
-		font  : { fontWeight : "bold", fontSize : 18 },
+		font  : { fontWeight : "bold", fontSize : 20 },
 		textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER
 	}),
 	theEndLbl = Ti.UI.createLabel({
@@ -69,16 +69,25 @@ Banner = ViewScrollr.create({
 	top        : 0,
 	height     : 180,
 	auto       : true,
+	delay      : 3000,
+	alpha      : 0.7,
+	backgroundColor : "#000",
 	navigation : {
-		selectedColor : "#000",
-		color         : "#fff"
+		onTop           : false,
+		style           : ViewScrollr.NAV_STYLE.BLOCK,
+		selectedColor   : "#fff",
+		color           : "#000",
+		showBorder      : true,
+		borderColor     : "#fff",
+		backgroundColor : "#000"
 	},
 	panels : [
 		{
 			view : introView
 		},
 		{
-			image : "/images/sunset_houses.jpg"
+			image : "/images/sunset_houses.jpg",
+			maxZoomScale : 4.0
 		},
 		{
 			image : "/images/beach.jpg"

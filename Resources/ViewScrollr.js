@@ -8,12 +8,16 @@ var navHeight       = 20,
 	captionFontSize = 14,
 	black           = "#000",
 	white           = "#fff",
-	scrollDelay     = 4000;
+	scrollDelay     = 4000,
+	NAV_STYLE       = {
+		BLOCK  : "block",
+		CIRCLE : "circle"
+	};
 
 /**
  * @method create
  * Creates a custom scrollable view component.
- * @param {Object} options Optional settings for view object
+ * @param {Object} options Optional settings for view object (see http://m54.co/ViewScrollrDocs)
  * @return {Ti.UI.View}
  *
  */
@@ -30,14 +34,15 @@ exports.create = function(options){
 		navigation = Ti.UI.createView({
 			height    : navHeight,
 			width     : Ti.UI.SIZE,
-			bottom    : 0,
 			textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
 			layout    : "horizontal"
 		}),
 		scrollableView = Ti.UI.createScrollableView({
 			showPagingControl : false,
 			width             : Ti.UI.FILL,
-			height            : Ti.UI.FILL
+			height            : Ti.UI.FILL,
+			disableBounce     : options.disableBounce || false,
+			backgroundColor   : options.backgroundColor || black
 		}),
 		autoScroll = function(){
 			if(isScrolling) return;
@@ -56,17 +61,27 @@ exports.create = function(options){
 		navigationPageControls = [],
 		currentPage = 0,
 		isScrolling = false,
-		autoScrollTimeout, aView, aPanel;
+		autoScrollTimeout, aView, aPanel, aCaption;
 
 	if(options.panels){
+
+		opacity = options.alpha || opacity;
+
 		for(var i=0, len=options.panels.length; i<len; i++){
 			aPanel = options.panels[i];
 
 			if(aPanel.image){
-				aView = Ti.UI.createView({
-					width  : Ti.UI.FILL,
-					height : Ti.UI.FILL
-				});
+				aView = aPanel.maxZoomScale ? 
+					Ti.UI.createScrollView({
+						width  : Ti.UI.FILL,
+						height : Ti.UI.FILL,
+						maxZoomScale : aPanel.maxZoomScale
+					}) :
+					Ti.UI.createView({
+						width  : Ti.UI.FILL,
+						height : Ti.UI.FILL
+					});
+
 				aView.add(
 					Ti.UI.createImageView({
 						image  : aPanel.image,
@@ -79,7 +94,12 @@ exports.create = function(options){
 			}
 
 			if(aPanel.caption){
-				aView.add(createCaptionView(aPanel.caption, options.navigation));
+				aCaption = createCaptionView(
+					aPanel.caption,
+					options.navigation && options.navigation.backgroundColor || black
+				);
+				aCaption[options.navigation.onTop ? "top" : "bottom"] = options.navigation ? navHeight : 0;
+				aView.add(aCaption);
 			}
 
 			scrollableView.addView(aView);
@@ -88,7 +108,9 @@ exports.create = function(options){
 				navigationPageControls.push(
 					createNavPage(
 						(i==0) ? options.navigation.selectedColor : options.navigation.color,
-						options.navigation.selectedColor
+						options.navigation.borderColor || options.navigation.selectedColor,
+						options.navigation.showBorder,
+						options.navigation.style || NAV_STYLE.CIRCLE
 					)
 				);
 				navigation.add(navigationPageControls[i]);
@@ -133,10 +155,11 @@ exports.create = function(options){
 			opacity : opacity,
 			height  : navHeight,
 			bottom  : 0,
-			backgroundColor : black
-		}),
+			backgroundColor : options.navigation.backgroundColor || black
+		});
+		aView[options.navigation.onTop ? "top" : "bottom"] = 0;
+		navigation[options.navigation.onTop ? "top" : "bottom"] = 0;
 		container.add(aView);
-		Ti.API.log(navigation);
 		container.add(navigation);
 		aView = null;
 	}
@@ -151,19 +174,20 @@ exports.create = function(options){
 	return container;
 };
 
+exports.NAV_STYLE = NAV_STYLE;
+
 // Private Utility Funcitons
-function createCaptionView(text, hasNav){
+function createCaptionView(text, bgColor){
 	var view = Ti.UI.createView({
 		height : captionHeight,
-		width  : Ti.UI.FILL,
-		bottom : navHeight
+		width  : Ti.UI.FILL
 	});
 
 	view.add(Ti.UI.createView({
 		opacity : opacity,
 		width   : Ti.UI.FILL,
 		height  : Ti.UI.FILL,
-		backgroundColor : black
+		backgroundColor : bgColor
 	}));
 
 	view.add(Ti.UI.createLabel({
@@ -178,7 +202,7 @@ function createCaptionView(text, hasNav){
 	return view;
 }
 
-function createNavPage(color, borderColor){
+function createNavPage(color, borderColor, showBorder, style){
 	return Ti.UI.createView({
 		backgroundColor : color,
 		width           : 8,
@@ -186,7 +210,7 @@ function createNavPage(color, borderColor){
 		top             : 6,
 		right           : 4,
 		borderWidth     : 1,
-		borderColor     : borderColor,
-		borderRadius    : 4
+		borderColor     : showBorder ? borderColor : color,
+		borderRadius    : (style===NAV_STYLE.CIRCLE) ? 4 : 0
 	});
 }
