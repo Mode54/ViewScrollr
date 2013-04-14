@@ -46,7 +46,19 @@ The `create()` method can take a number of parameters to customize the appearanc
 * **delay** _[OPTIONAL]_ Delay between panel auto scroll in milliseconds. **_(default: 4000)_**
 * **alpha** _[OPTIONAL]_ Alpha (opacity) value of navigation background. **_(default: 0.5)_**
 * **navigation** _[OPTIONAL]_ Navigation (page control) settings. Settings object is required to display navigation.
-* **panels** _[REQUIRED]_ Panels (Views) to display in the ViewScrollr. This are required for this module to function.
+	* **onTop** _[OPTIONAL]_ Move navigation (and captions) to top of ViewScrollr
+	* **style** _[OPTIONAL]_ Set navigation style. Either `ViewScrollr.STYLE.CIRCLE` or `ViewScrollr.STYLE.BLOCK` **_(default: ViewScrollr.STYLE.CIRCLE)_**
+	* **selectedColor* *_[REQUIRED]_ Color of the selected page indicator.
+	* **color** _[REQUIRED]_ Color of page indicators.
+	* **showBorder** _[OPTIONAL]_ Enable/Disable page indicator borders.
+	* **borderColor** _[OPTIONAL]_ Color of page indicator borders.
+	* **backgroundColor** _[OPTIONAL]_ Background color of navigation & caption. **_(default: #000)_**
+* **panels** _[REQUIRED]_ Panel object settings. These are required for this module to function. I'd recommend more then one.
+	* **view** _[REQUIRED]_ A Ti.UI.View object. This is only required if `image` is not set.
+	* **image** _[REQUIRED]_ A string with the path/url to an image. This is only required if `view` is not set. If both exist then `image` takes priority.
+	* **caption** _[OPTIONAL]_ The text to display as a caption for this panel.
+	* **maxZoomScale** _[OPTIONAL]_ If this is set then the `image` is wrapped in a Ti.UI.ScrollView with this maxZoomScale. This allows zooming. (see [Ti.UI.ScrollView](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.ScrollView-property-maxZoomScale))
+
 
 
 ## Got Bugs?
