@@ -13,25 +13,26 @@ Visit our [Titanium blog](http://TiHelp.me) for more code, tips & tricks. You ca
 Here is a quick example of how to use ViewScrollr
 
 ```javascript
-	//Require ViewControllr Module
-	var ViewScrollr = require("ViewScrollr");
+var ViewScrollr = require("ViewScrollr");
 
-	var Banner = ViewScrollr.create({
-		top        : 0,
-		height     : 180,
-		auto       : true,
-		navigation : {
-			selectedColor   : "#fff",
-			color           : "#000",
-			backgroundColor : "#000"
-		},
-		panels : [
-			{ image : "/images/sunset_houses.jpg" },
-			{ image : "/images/beach.jpg" },
-			{ image : "/images/lizard.jpg" },
-			{ image : "/images/cove.jpg" },
-			{ image : "/images/bermuda.jpg" }
-		]
-	});
+var Banner = ViewScrollr.create({
+	top        : 0,
+	height     : 180,
+	auto       : true,
+	navigation : {
+		selectedColor   : "#fff",
+		color           : "#000",
+		backgroundColor : "#000"
+	},
+	panels : [
+		{ image : "/images/sunset_houses.jpg" },
+		{ image : "/images/beach.jpg" },
+		{ image : "/images/lizard.jpg" },
+		{ image : "/images/cove.jpg" },
+		{ image : "/images/bermuda.jpg" }
+	]
+});
+
+win.add(Banner);
 ```
 
