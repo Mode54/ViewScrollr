@@ -47,8 +47,8 @@ The `create()` method can take a number of parameters to customize the appearanc
 * **alpha** _[OPTIONAL]_ Alpha (opacity) value of navigation background. **_(default: 0.5)_**
 * **navigation** _[OPTIONAL]_ Navigation (page control) settings. Settings object is required to display navigation.
 	* **onTop** _[OPTIONAL]_ Move navigation (and captions) to top of ViewScrollr
-	* **style** _[OPTIONAL]_ Set navigation style. Either `ViewScrollr.STYLE.CIRCLE` or `ViewScrollr.STYLE.BLOCK` **_(default: ViewScrollr.STYLE.CIRCLE)_**
-	* **selectedColor* *_[REQUIRED]_ Color of the selected page indicator.
+	* **style** _[OPTIONAL]_ Set navigation style. Either `ViewScrollr.NAV_STYLE.CIRCLE` or `ViewScrollr.NAV_STYLE.BLOCK` **_(default: ViewScrollr.NAV_STYLE.CIRCLE)_**
+	* **selectedColor** *_[REQUIRED]_ Color of the selected page indicator.
 	* **color** _[REQUIRED]_ Color of page indicators.
 	* **showBorder** _[OPTIONAL]_ Enable/Disable page indicator borders.
 	* **borderColor** _[OPTIONAL]_ Color of page indicator borders.
@@ -58,7 +58,6 @@ The `create()` method can take a number of parameters to customize the appearanc
 	* **image** _[REQUIRED]_ A string with the path/url to an image. This is only required if `view` is not set. If both exist then `image` takes priority.
 	* **caption** _[OPTIONAL]_ The text to display as a caption for this panel.
 	* **maxZoomScale** _[OPTIONAL]_ If this is set then the `image` is wrapped in a Ti.UI.ScrollView with this maxZoomScale. This allows zooming. (see [Ti.UI.ScrollView](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.ScrollView-property-maxZoomScale))
-
 
 
 ## Got Bugs?
