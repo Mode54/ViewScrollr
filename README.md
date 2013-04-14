@@ -48,7 +48,7 @@ The `create()` method can take a number of parameters to customize the appearanc
 * **navigation** _[OPTIONAL]_ Navigation (page control) settings. Settings object is required to display navigation.
 	* **onTop** _[OPTIONAL]_ Move navigation (and captions) to top of ViewScrollr
 	* **style** _[OPTIONAL]_ Set navigation style. Either `ViewScrollr.NAV_STYLE.CIRCLE` or `ViewScrollr.NAV_STYLE.BLOCK` **_(default: ViewScrollr.NAV_STYLE.CIRCLE)_**
-	* **selectedColor** *_[REQUIRED]_ Color of the selected page indicator.
+	* **selectedColor** _[REQUIRED]_ Color of the selected page indicator.
 	* **color** _[REQUIRED]_ Color of page indicators.
 	* **showBorder** _[OPTIONAL]_ Enable/Disable page indicator borders.
 	* **borderColor** _[OPTIONAL]_ Color of page indicator borders.
