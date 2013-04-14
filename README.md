@@ -39,7 +39,8 @@ win.add(Banner);
 
 The `create()` method can take a number of parameters to customize the appearance and behavior of the ViewScrollr.
 
-* **top, bottom, left, right** _[OPTIONAL]_ Position of ViewScrollr relative to the parent. Same as [Ti.UI.View](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View) properties.
+* **top, bottom, left, right** _[OPTIONAL]_ 
+** Position of ViewScrollr relative to the parent. Same as [Ti.UI.View](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View) properties.
 * **width, height** _[OPTIONAL]_ Size of ViewScrollr in platform-specific units. Same as [Ti.UI.View](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View) properties. *_(default: Ti.UI.FILL)_*
 * **backgroundColor** _[OPTIONAL]_ The background color of the container. If you view or image is smaller then the width or height then you will see this color in the background. *_(default: #000)_*
 * **auto** _[OPTIONAL]_ Enable/Disable auto scroll feature. *_(default: false)_*
