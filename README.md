@@ -59,6 +59,9 @@ The `create()` method can take a number of parameters to customize the appearanc
 	* **caption** _[OPTIONAL]_ The text to display as a caption for this panel.
 	* **maxZoomScale** _[OPTIONAL]_ If this is set then the `image` is wrapped in a Ti.UI.ScrollView with this maxZoomScale. This allows zooming. (see [Ti.UI.ScrollView](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.ScrollView-property-maxZoomScale))
 
+## Video Preview
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=8aUx_DD2nE8" target="_blank"><img src="https://raw.github.com/Mode54/ViewScrollr/master/Resources/images/video_poster.png" alt="ViewScrollr Video Preview" width="635" height="385" border="0" /></a>
 
 ## Got Bugs?
 
