@@ -61,7 +61,7 @@ The `create()` method can take a number of parameters to customize the appearanc
 
 ## Video Preview
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=8aUx_DD2nE8" target="_blank"><img src="http://m54.co/o" alt="ViewScrollr Video Preview" width="635" height="385" border="0" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=8aUx_DD2nE8" target="_blank"><img src="https://raw.github.com/Mode54/ViewScrollr/master/Resources/images/video_poster.png" alt="ViewScrollr Video Preview" width="635" height="385" border="0" /></a>
 
 ## Sources and Credits
 		
