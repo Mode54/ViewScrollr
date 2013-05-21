@@ -63,6 +63,20 @@ The `create()` method can take a number of parameters to customize the appearanc
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=8aUx_DD2nE8" target="_blank"><img src="https://raw.github.com/Mode54/ViewScrollr/master/Resources/images/video_poster.png" alt="ViewScrollr Video Preview" width="635" height="385" border="0" /></a>
 
+## Sources and Credits
+		
+I've used the following images from [kansasphoto's photostream](http://www.flickr.com/photos/34022876@N06/) on Flickr via [Creative Commons Search tool](http://search.creativecommons.org/).</p>
+		
+* [Beach](http://www.flickr.com/photos/34022876@N06/6873017519)
+* [Bermuda HDR](http://www.flickr.com/photos/34022876@N06/7679656016)
+* [Jobson's Cove](http://www.flickr.com/photos/34022876@N06/3763170877)
+* [Jamaican Anole](http://www.flickr.com/photos/34022876@N06/7680071526)
+* [DSC_0243_4_5](http://www.flickr.com/photos/34022876@N06/6893964117)
+
+## ViewScrollr Pro Version
+
+We released a pro version to this module with some cool extra features like animated content blocks and video slides. [Download it here!](http://m54.co/ViewScrollrPro)
+
 ## Got Bugs?
 
-Log them in the [Issues section](https://github.com/Mode54/ViewScrollr/issues). Please provide details reproducible test cases if possible.
+Log them in the [Issues section](https://github.com/Mode54/ViewScrollr/issues). Please provide details and reproducible test cases if possible.
